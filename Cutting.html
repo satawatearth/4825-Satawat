@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function SPEEDRATE() {
+            let D = parseFloat(document.getElementById("D").value);
+            let n = parseFloat(document.getElementById("n").value);
+            let Vc = (3.1415 * D * n) / 1000;
+            document.getElementById("SPEEDRATE").value = Vc.toFixed(4);
+        }
+    </script>
+    <script>
+        function FEEDRATE() {
+            let fz = parseFloat(document.getElementById("FEED PER TOOTH").value);
+            let xn = parseFloat(document.getElementById("NUMBER OF TEETH").value);
+            let n1 = parseFloat(document.getElementById("n1").value);
+            let Vf = (fz * xn *n1);
+            document.getElementById("FEED RATE").value = Vf.toFixed(4);
+        }
+    </script>
+    <style>
+        .container{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .Calculator{
+            width: 400px;
+            height: 400px;
+            border: 5px solid black;
+            border-radius: 20px;
+            background-color: rgb(109, 214, 255);
+            padding: 15px;
+            margin: 20px;
+            font-family:sans-serif;
+        }
+        .Calculator h1{
+            text-align: center;
+        }
+        .Calculator input{
+            background-color: rgb(96, 255, 104);
+            height: 20px;
+        }
+        .Calculator button{
+            background-color: rgb(47, 167, 47);
+            padding: 13px;
+        }
+        h1{
+            font-size: 20px;
+            text-align: center;
+        }
+        body{
+            background-color: rgb(255, 122, 233);
+        }
+        .img{
+            border-radius: 20px;
+            border: 5px solid rgb(126, 17, 17);
+        }
+        input{
+            margin: 10px;
+        }
+    </style>    
+</head>
+<body>
+  <div class="container">
+    <div class="Calculator">
+        <h1>SPEED RATE</h1>
+        <label for="" style="margin-left: 20px;">ความเร็วรอบ (n)</label>
+        <br>
+        <input type="text" name="" id="n" size=""> (rev/min)
+        <br>
+        <label for="" style="margin-left: 20px;">เส้นผ่าศูนย์กลางงาน (D)</label>
+        <br>
+        <input type="text" name="" id="D" size=""> (mm)
+        <br>
+        <label for="" style="margin-left: 20px;">SPEED RATE (Vc)</label>
+        <br>
+        <input type="text" name="" id="SPEEDRATE" size=""> (m/min)
+        <br>
+        <button onclick="SPEEDRATE()">Calculate</button>
+    </div>
+    <div class="Calculator">
+        <h1>FEED RATE</h1>
+        <label for="" style="margin-left: 20px;">FEED PER TOOTH (fz)</label>
+        <br>
+        <input type="text" name="" id="FEED PER TOOTH" size=""> (mm/tooth)
+        <br>
+        <label for="" style="margin-left: 20px;">จำนวนฟันตัด (Zn)</label>
+        <br>
+        <input type="text" name="" id="NUMBER OF TEETH" size="">
+        <br>
+        <label for="" style="margin-left: 20px;">ความเร็วรอบ (n)</label>
+        <br>
+        <input type="text" name="" id="n1" size=""> (rev/min)
+        <br>
+        <label for="" style="margin-left: 20px;">FEED RATE (Vf)</label>
+        <br>
+        <input type="text" name="" id="FEED RATE" size=""> (mm/min)
+        <br>
+        <button class="botton2" onclick="FEEDRATE()">Calculate</button>
+    </div>
+</body>
+</html>
