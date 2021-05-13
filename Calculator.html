@@ -28,6 +28,9 @@
     }
 </script>
 <style>
+    body{
+        background-image: url(Astro.gif);
+    }
     .calculator{
         width: 250px;
         height: 200px;
@@ -54,41 +57,7 @@
         background-color: rgb(144, 255, 116);
     }
 </style>
-<style>
-    .tempConversion{
-        width: 250px;
-        height: 200px;
-        border: 5px solid black;
-        border-radius: 20px;
-        background-color: rgb(174, 88, 255);
-        padding: 60px;
-        margin-left: 500px;
-        padding-left: 20px;
-    }
-</style>
-<style>
-    .tempConversion h4{
-    text-align: center;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    </style>
 
-<script>
-    function c2f(){
-        let c = parseFloat (document.getElementById("cel").value);
-        let f = c * (9 / 5) + 32;
-        document.getElementById("fah").value = f.toFixed(2)
-    }
-    function f2c(){
-        let f = parseFloat (document.getElementById("fah").value);
-        let c = (f-32) * 5 / 9 ;
-        document.getElementById("cel").value = c.toFixed(2)
-    }
-</script>
-<style>
-    .container{
-        display: flex;
-        flex-wrap: wrap;
-    }
 </style>
 
 <body>
@@ -113,15 +82,5 @@
     <button onclick="basicCalculation()">Enter</button>
     </div>
 
-    <div class="tempConversion">
-        <h4>Temperature Conversion</h4>
-        <label for="">Celcius(C)</label><br>
-        <input type="text" name="" id="cel" size="10">
-        <button onclick="c2f()">c2f</button><br>
-
-        <label for="">Farenheit(F)</label><br>
-        <input type="text" name="" id="fah" size="10">
-        <button onclick="f2c()">f2c</button><br>
-    </div>
 </body>
 </html>
